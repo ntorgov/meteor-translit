@@ -1,24 +1,26 @@
 Package.describe({
-  name: 'akerius:translit',
-  version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
-  documentation: 'README.md'
+	name: 'akerius:translit',
+	version: '0.0.1',
+	// Brief, one-line summary of the package.
+	summary: 'Transliteration for Meteor',
+	// URL to the Git repository containing the source code for this package.
+	git: 'https://github.com/ntorgov/meteor-translit',
+	// By default, Meteor will default to using README.md for documentation.
+	// To avoid submitting documentation, set this field to null.
+	documentation: 'README.md'
 });
 
-Package.onUse(function(api) {
-  api.versionsFrom('1.4.2.3');
-  api.use('ecmascript');
-  api.mainModule('translit.js');
+Package.onUse(function (api) {
+	//api.versionsFrom('1.0.1');
+	api.use('ecmascript');
+	api.mainModule('translit.js');
 });
 
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('akerius:translit');
-  api.mainModule('translit-tests.js');
+Package.onTest(function (api) {
+	api.use([
+		'ecmascript',
+		'tinytest',
+		'akerius:translit']);
+	api.mainModule('translit-tests.js');
+	//api.addFiles('translit-tests.js');
 });
