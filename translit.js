@@ -2,7 +2,7 @@
 
 // Variables exported by this module can be imported by other packages and
 // applications. See translit-tests.js for an example of importing.
-export const name = 'translit';
+//export const name = 'translit';
 
 var transliterationTable = {
 	'А': 'A',
@@ -107,9 +107,16 @@ var transliterationTable = {
  */
 translit = function (originalString) {
 
-	let resultString = originalString;
+	var resultString = originalString;
 
 	for (currentSymbol in transliterationTable) {
-		resultString.replace(/(currentSymbol)/gi,);
+		//console.log(transliterationTable[currentSymbol]);
+		var regexp = new RegExp('\\' + currentSymbol, 'g');
+		resultString = resultString.replace(regexp, transliterationTable[currentSymbol]);
 	}
+	resultString = resultString.trim();
+	//console.log(resultString);
+	return resultString;
 };
+
+console.log(translit('Привет, Мир!'));
