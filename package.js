@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'akerius:translit',
-	version: '0.0.1',
+	version: '0.0.2',
 	// Brief, one-line summary of the package.
 	summary: 'Transliteration for Meteor',
 	// URL to the Git repository containing the source code for this package.
@@ -12,15 +12,7 @@ Package.describe({
 
 Package.onUse(function (api) {
 	//api.versionsFrom('1.0.1');
-	api.use('ecmascript');
+	//api.use('ecmascript');
 	api.mainModule('translit.js');
 });
 
-Package.onTest(function (api) {
-	api.use([
-		'ecmascript',
-		'tinytest',
-		'akerius:translit']);
-	api.mainModule('translit-tests.js');
-	//api.addFiles('translit-tests.js');
-});

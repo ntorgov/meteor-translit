@@ -110,13 +110,11 @@ translit = function (originalString) {
 	var resultString = originalString;
 
 	for (currentSymbol in transliterationTable) {
-		//console.log(transliterationTable[currentSymbol]);
+
 		var regexp = new RegExp('\\' + currentSymbol, 'g');
 		resultString = resultString.replace(regexp, transliterationTable[currentSymbol]);
 	}
 	resultString = resultString.trim();
-	//console.log(resultString);
+
 	return resultString;
 };
-
-console.log(translit('Привет, Мир!'));
