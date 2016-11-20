@@ -103,11 +103,15 @@ var transliterationTable = {
 
 /**
  * @function translit
- * @param originalString
+ * @param originalString Стока для перевода в транслит
+ * @param spacebarSymbol Символ пробела
  */
-translit = function (originalString) {
+translit = function (originalString, spacebarSymbol) {
 
-	var resultString = originalString;
+	if(typeof(spacebarSymbol) == 'undefined') {
+		spacebarSymbol = '-';
+	}
+	var resultString = originalString.trim().toLowerCase().replace(/ /gi, spacebarSymbol);
 
 	for (currentSymbol in transliterationTable) {
 
