@@ -1,9 +1,3 @@
-// Write your package code here!
-
-// Variables exported by this module can be imported by other packages and
-// applications. See translit-tests.js for an example of importing.
-//export const name = 'translit';
-
 var transliterationTable = {
 	"А": "A",
 	"а": "a",
@@ -108,7 +102,7 @@ var transliterationTable = {
  */
 translit = function (originalString, spacebarSymbol) {
 
-	if(typeof(spacebarSymbol) == "undefined") {
+	if (typeof(spacebarSymbol) == "undefined") {
 		spacebarSymbol = "-";
 	}
 	var resultString = originalString.trim().toLowerCase().replace(/ /gi, spacebarSymbol);
