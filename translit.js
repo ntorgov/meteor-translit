@@ -1,4 +1,5 @@
 var transliterationTable = {
+
 	"А": "A",
 	"а": "a",
 	"Б": "B",
@@ -102,7 +103,7 @@ var transliterationTable = {
  */
 translit = function (originalString, spacebarSymbol) {
 
-	if (typeof(spacebarSymbol) == "undefined") {
+	if (typeof(spacebarSymbol) === "undefined") {
 		spacebarSymbol = "-";
 	}
 	var resultString = originalString.trim().toLowerCase().replace(/ /gi, spacebarSymbol);
